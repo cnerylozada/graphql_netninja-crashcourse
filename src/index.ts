@@ -2,13 +2,13 @@
 // definition and your set of resolvers.
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { videoGamesDefs } from "../schemas/videogames.js";
-import { videoGamesResolvers } from "../resolvers/books.js";
+import { videogamesDefs } from "../schemas/videogames.js";
+import { videogamesResolvers } from "../resolvers/videogames.js";
 
 // definition and your set of resolvers.
 const server = new ApolloServer({
-  typeDefs: videoGamesDefs,
-  resolvers: videoGamesResolvers,
+  typeDefs: videogamesDefs,
+  resolvers: videogamesResolvers,
 });
 
 // Passing an ApolloServer instance to the `startStandaloneServer` function:

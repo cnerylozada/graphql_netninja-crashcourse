@@ -1,7 +1,7 @@
 // Resolvers define how to fetch the types defined in your schema.
 import { reviews, games, authors } from "../mocks/videogames.js";
 
-export const videoGamesResolvers = {
+export const videogamesResolvers = {
   Query: {
     reviewById: (_, args: { id: string }) =>
       reviews.find((review) => review.id === args.id),
@@ -10,5 +10,13 @@ export const videoGamesResolvers = {
       games.find((game) => game.id === args.id),
     games: () => games,
     authors: () => authors,
+  },
+  Game: {
+    reviews: (parent: { id: string }) =>
+      reviews.filter((_) => _.game_id === parent.id),
+  },
+  Author: {
+    reviews: (parent: { id: string }) =>
+      reviews.filter((_) => _.author_id === parent.id),
   },
 };
