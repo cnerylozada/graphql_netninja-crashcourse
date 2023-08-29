@@ -1,5 +1,4 @@
 export const videogamesDefs = `#graphql
-  # This "Book" type defines the queryable fields for every book in our data source.
   type Game {
     id: ID!
     title: String!
@@ -17,7 +16,6 @@ export const videogamesDefs = `#graphql
     verified: Boolean!
     reviews: [Review!]
   }
-
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each.
   type Query {
