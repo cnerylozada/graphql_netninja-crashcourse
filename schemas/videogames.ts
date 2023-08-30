@@ -29,8 +29,13 @@ export const videogamesDefs = `#graphql
     title: String!
     platform: [String!]!
   } 
+  input EditGameInput {
+    title: String
+    platform: [String!]
+  } 
   type Mutation {
     removeGame(gameId:ID!): [Game]
     addGame(game: AddGameInput!): Game
+    updateGame(gameId:ID!, edits: EditGameInput): Game
   }
 `;
