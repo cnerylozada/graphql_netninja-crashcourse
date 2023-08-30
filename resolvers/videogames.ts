@@ -19,4 +19,14 @@ export const videogamesResolvers = {
     games: () => games,
     authors: () => authors,
   },
+  Mutation: {
+    removeGame: (_, args: { gameId: string }) => {
+      return games.filter((_) => _.id !== args.gameId);
+    },
+    addGame: (_, args: { game: { title: string; platform: string[] } }) => {
+      const newGame = { ...args.game, id: "999" };
+      games.push(newGame);
+      return newGame;
+    },
+  },
 };

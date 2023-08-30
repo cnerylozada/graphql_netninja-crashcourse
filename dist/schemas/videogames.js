@@ -25,4 +25,12 @@ export const videogamesDefs = `#graphql
     games: [Game]
     authors: [Author]
   }
+  input AddGameInput {
+    title: String!
+    platform: [String!]!
+  } 
+  type Mutation {
+    removeGame(gameId:ID!): [Game]
+    addGame(game: AddGameInput): Game
+  }
 `;
